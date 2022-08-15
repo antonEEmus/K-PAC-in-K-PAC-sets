@@ -1,0 +1,59 @@
+@font-face {
+    font-family: Roboto;
+    src: url(/resources/codebase/fonts/roboto-regular-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text {
+    font-family: Roboto, sans-serif;
+}
+
+.filter, .grid, a {
+    display: inline-block;
+}
+
+.grid {
+    float: left;
+    width: auto;
+}
+
+.filter {
+    float: left;
+    margin-left: 15px;
+}
+
+.filter-header {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.navigation-button, .submit-button, .filter-button {
+    border-radius: 5px;
+    border-color: inherit;
+    color: white;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.navigation-button {
+    background-color: deepskyblue;
+}
+
+.submit-button {
+    background-color: limegreen;
+}
+
+.filter-button {
+    background-color: darkorange;
+}
+
+.delete-icon {
+    cursor: pointer;
+}
+
+.delete-icon img {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
