@@ -1,4 +1,4 @@
-package core.basesyntax.dao.impl;
+package core.basesyntax.dao.hibernate;
 
 import core.basesyntax.dao.AbstractDao;
 import core.basesyntax.dao.KPacSetDao;
@@ -10,11 +10,9 @@ import java.util.Optional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class KPacSetDaoImpl extends AbstractDao<KPacSet> implements KPacSetDao {
-    public KPacSetDaoImpl(SessionFactory sessionFactory) {
+public class KPacSetDaoHibernate extends AbstractDao<KPacSet> implements KPacSetDao {
+    public KPacSetDaoHibernate(SessionFactory sessionFactory) {
         super(sessionFactory, KPacSet.class);
     }
 

@@ -20,9 +20,9 @@
     <h1 class="text">Add K-PAC</h1>
     <form id="add-form">
         <span class="text">Title</span> <br>
-        <input id="title" type="text" required> <br>
+        <input id="title" type="text" maxlength="250" required> <br>
         <span class="text">Description</span> <br>
-        <input id="description" type="text" required> <br>
+        <input id="description" type="text" maxlength="2000" required> <br>
         <button class="text submit-button" type="submit">Submit</button>
     </form>
     <script src="<c:url value="/resources/scripts/kpac_create.js"/>"></script>

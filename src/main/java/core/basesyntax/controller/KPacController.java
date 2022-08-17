@@ -1,10 +1,9 @@
 package core.basesyntax.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import core.basesyntax.component.dtomapper.KPacMapper;
+import core.basesyntax.component.jsonparser.JsonParser;
 import core.basesyntax.dto.request.KPacRequestDto;
 import core.basesyntax.dto.response.KPacResponseDto;
-import core.basesyntax.mapper.KPacMapper;
 import core.basesyntax.model.KPac;
 import core.basesyntax.model.KPacSet;
 import core.basesyntax.service.KPacService;
@@ -27,12 +26,14 @@ public class KPacController {
     private final KPacService kpacService;
     private final KPacSetService kpacSetService;
     private final KPacMapper kpacMapper;
+    private final JsonParser jsonParser;
 
     public KPacController(KPacService kpacService, KPacSetService kpacSetService,
-                          KPacMapper kpacMapper) {
+                          KPacMapper kpacMapper, JsonParser jsonParser) {
         this.kpacService = kpacService;
         this.kpacSetService = kpacSetService;
         this.kpacMapper = kpacMapper;
+        this.jsonParser = jsonParser;
     }
 
     @GetMapping
@@ -40,15 +41,7 @@ public class KPacController {
         List<KPacResponseDto> kpacs = kpacService.getAll().stream()
                 .map(kpacMapper::toDto)
                 .collect(Collectors.toList());
-        ObjectMapper mapper = new ObjectMapper();
-        String json;
-        try {
-            json = mapper.writeValueAsString(kpacs);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException("Cannot parse to JSON: " + kpacs, e);
-        }
-
-        model.addAttribute("kpacs", json);
+        model.addAttribute("kpacs", jsonParser.parse(kpacs));
         return "/kpacs/all";
     }
 

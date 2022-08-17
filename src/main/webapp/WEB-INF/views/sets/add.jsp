@@ -20,7 +20,7 @@
     <h1 class="text">Add K-PAC Set</h1>
     <form id="add-form">
         <span class="text">Title </span>
-        <input id="title" type="text" required>
+        <input id="title" type="text" maxlength="250" required>
         <br>
         <span class="text">Choose K-PACs:</span>
         <br>

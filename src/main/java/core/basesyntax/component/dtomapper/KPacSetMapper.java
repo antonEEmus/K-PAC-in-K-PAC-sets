@@ -1,4 +1,4 @@
-package core.basesyntax.mapper;
+package core.basesyntax.component.dtomapper;
 
 import core.basesyntax.dto.request.KPacSetRequestDto;
 import core.basesyntax.dto.response.KPacSetResponseDto;
