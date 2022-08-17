@@ -35,7 +35,7 @@ and to delete records from the database by clicking on the delete icon.
 
 ### Developed with:
 
-- Java 11, Hibernate 5, Spring 5, Spring MVC
+- Java 11, Hibernate 5, Spring 5, Spring JDBC, Spring MVC
 - MySQL 8
 - Lombok, Jackson, Hibernate validator
 - Maven, Intellij IDEA
